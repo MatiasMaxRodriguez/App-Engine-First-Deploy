@@ -1,0 +1,180 @@
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Principal Matmaxlab</title>
+    <style>
+        :root {
+            --sidebar-bg: #0f172a;
+            --accent: #06b6d4;
+            --bg-body: #f1f5f9;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+            margin: 0;
+            display: flex; /* Layout de flexbox para la barra lateral */
+            min-height: 100vh;
+            background-color: var(--bg-body);
+        }
+
+        /* Barra Lateral */
+        aside {
+            width: 240px;
+            background-color: var(--sidebar-bg);
+            color: white;
+            padding: 2rem 1.5rem;
+            flex-shrink: 0;
+        }
+
+        aside h2 {
+            color: var(--accent);
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav li {
+            margin: 1rem 0;
+            padding: 0.8rem;
+            border-radius: 6px;
+            transition: background 0.3s;
+            cursor: pointer;
+        }
+
+        nav li:hover {
+            background: rgba(255,255,255,0.1);
+        }
+
+        /* Contenido Principal */
+        main {
+            flex-grow: 1;
+            padding: 2rem;
+        }
+
+        .header-main {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            border-left: 4px solid var(--accent);
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+        }
+
+        .stat-card span { color: #64748b; font-size: 0.9rem; }
+        .stat-card h3 { margin: 0.5rem 0; font-size: 1.8rem; }
+
+        .project-table {
+            width: 100%;
+            background: white;
+            border-collapse: collapse;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+        }
+
+        .project-table th, .project-table td {
+            text-align: left;
+            padding: 1rem;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .project-table th { background: #f8fafc; color: #475569; }
+
+        .badge {
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            background: #dcfce7;
+            color: #166534;
+        }
+
+        @media (max-width: 768px) {
+            body { flex-direction: column; }
+            aside { width: 100%; padding: 1rem; box-sizing: border-box; }
+            .stats-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <aside>
+        <h2>Panel de Control</h2>
+        <nav>
+            <ul>
+                <li>📊 Dashboard</li>
+                <li>🚀 Proyectos</li>
+                <li>⚙️ Configuración</li>
+                <li>👤 Perfil</li>
+            </ul>
+        </nav>
+    </aside>
+
+    <main>
+        <div class="header-main">
+            <h1>Proyectos Cloud GCP</h1>
+            <button style="background: var(--accent); color: white; border: none; padding: 10px 20px; border-radius: 6px; cursor: pointer;">
+                + Nuevo Proyecto
+            </button>
+        </div>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <span>Activos</span>
+                <h3>12</h3>
+            </div>
+            <div class="stat-card">
+                <span>En Progreso</span>
+                <h3>5</h3>
+            </div>
+            <div class="stat-card">
+                <span>Completados</span>
+                <h3>28</h3>
+            </div>
+        </div>
+
+        <h3>Listado Reciente</h3>
+        <table class="project-table">
+            <thead>
+                <tr>
+                    <th>Proyecto</th>
+                    <th>Estado</th>
+                    <th>Fecha</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Infraestructura GCP</td>
+                    <td><span class="badge">Activo</span></td>
+                    <td>Abril 2026</td>
+                </tr>
+                <tr>
+                    <td>Migración Cloud</td>
+                    <td><span class="badge">Activo</span></td>
+                    <td>Marzo 2026</td>
+                </tr>
+                <tr>
+                    <td>Optimización de Costos</td>
+                    <td><span class="badge">Activo</span></td>
+                    <td>Febrero 2026</td>
+                </tr>
+            </tbody>
+        </table>
+    </main>

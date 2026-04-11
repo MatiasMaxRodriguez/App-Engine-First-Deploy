@@ -1,0 +1,4 @@
+#Execute
+gcloud init
+#Apply on App Engine
+gcloud app deploy --version=version_number

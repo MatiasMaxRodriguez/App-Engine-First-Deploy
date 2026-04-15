@@ -1,180 +1,109 @@
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Principal Matmaxlab</title>
     <style>
+        /* CSS Integrado para que funcione al copiar y pegar */
         :root {
-            --sidebar-bg: #0f172a;
-            --accent: #06b6d4;
-            --bg-body: #f1f5f9;
+            --primary: #2563eb;
+            --dark: #1e293b;
+            --light: #f8fafc;
         }
 
         body {
-            font-family: 'Inter', system-ui, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
-            display: flex; /* Layout de flexbox para la barra lateral */
-            min-height: 100vh;
-            background-color: var(--bg-body);
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--light);
         }
 
-        /* Barra Lateral */
-        aside {
-            width: 240px;
-            background-color: var(--sidebar-bg);
-            color: white;
-            padding: 2rem 1.5rem;
-            flex-shrink: 0;
-        }
-
-        aside h2 {
-            color: var(--accent);
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-        }
-
-        nav ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        nav li {
-            margin: 1rem 0;
-            padding: 0.8rem;
-            border-radius: 6px;
-            transition: background 0.3s;
-            cursor: pointer;
-        }
-
-        nav li:hover {
-            background: rgba(255,255,255,0.1);
-        }
-
-        /* Contenido Principal */
-        main {
-            flex-grow: 1;
-            padding: 2rem;
-        }
-
-        .header-main {
+        header {
+            background: white;
+            padding: 1rem 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 2rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
         }
 
-        .stats-grid {
+        nav a {
+            margin-left: 20px;
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 80px 10%;
+            background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+            color: white;
+        }
+
+        .hero h1 { font-size: 3rem; margin-bottom: 1rem; }
+
+        .services {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1.5rem;
-            margin-bottom: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            padding: 50px 10%;
         }
 
-        .stat-card {
+        .card {
             background: white;
-            padding: 1.5rem;
-            border-radius: 12px;
-            border-left: 4px solid var(--accent);
-            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            text-align: center;
         }
 
-        .stat-card span { color: #64748b; font-size: 0.9rem; }
-        .stat-card h3 { margin: 0.5rem 0; font-size: 1.8rem; }
-
-        .project-table {
-            width: 100%;
-            background: white;
-            border-collapse: collapse;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
-        }
-
-        .project-table th, .project-table td {
-            text-align: left;
-            padding: 1rem;
-            border-bottom: 1px solid #e2e8f0;
-        }
-
-        .project-table th { background: #f8fafc; color: #475569; }
-
-        .badge {
-            padding: 4px 10px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            background: #dcfce7;
-            color: #166534;
-        }
-
-        @media (max-width: 768px) {
-            body { flex-direction: column; }
-            aside { width: 100%; padding: 1rem; box-sizing: border-box; }
-            .stats-grid { grid-template-columns: 1fr; }
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background: var(--dark);
+            color: white;
         }
     </style>
 </head>
 <body>
 
-    <aside>
-        <h2>Panel de Control</h2>
+    <header>
+        <div class="logo"><strong>Matmaxlab</strong></div>
         <nav>
-            <ul>
-                <li>📊 Dashboard</li>
-                <li>🚀 Proyectos</li>
-                <li>⚙️ Configuración</li>
-                <li>👤 Perfil</li>
-            </ul>
+            <a href="#">Inicio</a>
+            <a href="#">Servicios</a>
+            <a href="#">Contacto</a>
         </nav>
-    </aside>
+    </header>
 
-    <main>
-        <div class="header-main">
-            <h1>Proyectos Cloud GCP</h1>
-            <button style="background: var(--accent); color: white; border: none; padding: 10px 20px; border-radius: 6px; cursor: pointer;">
-                + Nuevo Proyecto
-            </button>
+    <section class="hero">
+        <h1>Bienvenido a mi sitio web</h1>
+        <p>Una página estática rápida, responsiva y fácil de editar.</p>
+    </section>
+
+    <main class="services">
+        <div class="card">
+            <h3>Diseño Web</h3>
+            <p>Creamos interfaces intuitivas y modernas para tus usuarios.</p>
         </div>
-
-        <div class="stats-grid">
-            <div class="stat-card">
-                <span>Activos</span>
-                <h3>12</h3>
-            </div>
-            <div class="stat-card">
-                <span>En Progreso</span>
-                <h3>5</h3>
-            </div>
-            <div class="stat-card">
-                <span>Completados</span>
-                <h3>28</h3>
-            </div>
+        <div class="card">
+            <h3>Desarrollo Cloud</h3>
+            <p>Especialistas en infraestructura escalable y segura.</p>
         </div>
-
-        <h3>Listado Reciente</h3>
-        <table class="project-table">
-            <thead>
-                <tr>
-                    <th>Proyecto</th>
-                    <th>Estado</th>
-                    <th>Fecha</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Infraestructura GCP</td>
-                    <td><span class="badge">Activo</span></td>
-                    <td>Abril 2026</td>
-                </tr>
-                <tr>
-                    <td>Migración Cloud</td>
-                    <td><span class="badge">Activo</span></td>
-                    <td>Marzo 2026</td>
-                </tr>
-                <tr>
-                    <td>Optimización de Costos</td>
-                    <td><span class="badge">Activo</span></td>
-                    <td>Febrero 2026</td>
-                </tr>
-            </tbody>
-        </table>
+        <div class="card">
+            <h3>Soporte Técnico</h3>
+            <p>Asistencia remota garantizada para tus operaciones.</p>
+        </div>
     </main>
+
+    <footer>
+        <p>&copy; 2026 Matmaxlab - Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>

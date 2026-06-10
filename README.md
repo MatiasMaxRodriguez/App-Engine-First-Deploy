@@ -9,8 +9,13 @@ Para este laboratorio se utilizó la imagen oficial de Docker de nginx y la docu
   * nginx.conf - Archivo de configuración básica de nginx.
   * www/index.html - Página de prueba cargada en nginx.
 
+## Vista previa del proyecto
 
-## Tecnologías utilizadas:
+
+![Capturas de pantalla](ezgif.com-apng-to-webp-converter.webp)
+
+
+## Tecnologías utilizadas
 
 [Google App Engine](https://docs.cloud.google.com/appengine/docs/an-overview-of-app-engine?hl=es-419)
 [Docker](https://www.docker.com/)
